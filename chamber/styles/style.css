@@ -1,0 +1,220 @@
+body,html {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+.header {
+    background-color: #ffffff;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #149997;
+}
+.header img {
+    height: 50px;
+}
+.header nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: black;
+}
+.hero {
+    position: relative;
+    height: 300px;
+    background-image: url("../images/hero-image.jpeg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+ 
+}
+
+.hero-content h1 {
+    font-size: 50px;
+    margin-bottom: 1rem;
+    font-family: 'Arial';
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); 
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+}
+
+.hero button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 20px 20px;
+    background-color: #149997;
+    color: #000;
+    border: none;
+    cursor: pointer;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); 
+    font-family: 'Arial';
+
+}
+.content {
+    padding: 20px;
+}
+.content h1 {
+    font-size: 24px;
+    font-weight: bold; 
+}
+#memberContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Default to list view */
+#memberContainer.list-view {
+    display: block;
+  }
+  
+  #memberContainer.grid-view {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+.member-card {
+    background-color: #f0f0f0;
+    padding: 20px;
+    text-align: center;
+    width: 250px;
+    box-sizing: border-box;
+}
+.member-card img {
+    width: 100%;
+    height: auto;
+}
+.member-card h2 {
+    font-size: 18px;
+    font-weight: bold;
+}
+.member-card p {
+    margin: 5px 0;
+}
+
+.logo {
+    max-width: 90px; /* Ensure the width is restricted */
+    max-height: 50px; /* Optional, to further restrict size */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Proper scaling */
+    display: block; /* Ensure consistent rendering */
+    margin: 0 auto; /* Center the logo horizontally, if needed */
+  }
+  
+  
+  
+#toggleView {
+    margin: 20px 0;
+    padding: 10px 20px;
+    background-color: #149997;
+    border: none;
+    cursor: pointer;
+}
+.grid-view .member-card {
+    width: 250px;
+}
+.list-view .member-card {
+    width: 100%;
+}
+.footer {
+    background-color: #149997;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+  }
+  
+  .footer .business-cards {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .footer .business-card {
+    background-color: #fff;
+    padding: 20px;
+    flex: 1;
+    margin: 0 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+  }
+  
+  .footer .business-card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .footer .business-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+  }
+  
+  .footer .business-card .card-info {
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .footer .business-card .card-info .name {
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  .footer .business-card .card-info .position {
+    font-style: italic;
+    color: #777;
+  }
+  
+  .footer .business-card .card-info .company {
+    color: #149997;
+    font-size: 12px;
+  }
+  
+  .footer .contact-info {
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  
+  .footer .social-icons {
+    margin-top: 20px;
+  }
+  
+  .footer .social-icons i {
+    margin: 0 10px;
+    font-size: 24px;
+    color: #fff; /* Default color */
+    transition: color 0.3s;
+}
+
+.footer .social-icons i:hover {
+    color: #fff; /* Color on hover (when clicked) */
+}
+
+.footer .social-icons a {
+    color: #fff; /* Ensures the link itself is white */
+}
+
+.footer .social-icons a:hover i {
+    color: #fff; /* Ensures the icon itself turns white on hover */
+}
+
+@media (max-width: 768px) {
+    .content .sections {
+        flex-direction: column;
+    }
+    .footer .business-cards {
+        flex-direction: column;
+    }
+}
