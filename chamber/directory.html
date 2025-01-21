@@ -3,43 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Timbuktu Chamber of Commerce Directory">
+  <meta name="description" content="Buenos Aires Chamber of Commerce Directory">
   <meta name="author" content="Your Name">
-  <meta property="og:title" content="Timbuktu Chamber Directory">
+  <meta property="og:title" content="Buenos Aires Chamber Directory">
   <meta property="og:type" content="website">
   <meta property="og:image" content="images/logo.png">
   <meta property="og:url" content="https://example.com/directory.html">
   <title>Buenos Aires Chamber Directory</title>
   <link rel="stylesheet" href="styles/style.css">
   <script src="scripts/script.js" defer></script>
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-
-  <!-- Font Awesome for social media icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="icon" href="images/favicon.ico">
 
 </head>
 <body>
   <header class="header">
-    <img src="images/logo.png" alt="Timbuktu Chamber Logo">
+    <img src="images/logo.png" alt="Buenos Aires Chamber Logo">
     <nav>
-      <a href="#">Home</a>
-      <a href="#">Directory</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
+      <a href="#" aria-label="Navigate to Home">Home</a>
+      <a href="#" aria-label="Navigate to Directory">Directory</a>
+      <a href="#" aria-label="Navigate to About Us">About</a>
+      <a href="#" aria-label="Navigate to Contact Us">Contact</a>
     </nav>
   </header>
   <main>
     <section class="hero">
-        <div class="hero-content">
-      <h1>Chamber Directory web</h1>
-      <button>LEARN MORE</button>
+      <div class="hero-content">
+        <h1>Chamber Directory web</h1>
+        <a href="#" class="hero-button" aria-label="Learn more about the Buenos Aires Chamber Directory">LEARN MORE</a>
+      </div>
     </section>
     <div class="content">
-      <h1>Welcome to the Buenos Aires Chamber Directory</h1>
-      <button id="toggleView">TOGGLE VIEW</button>
-      <div id="memberContainer" class="list-view">
-        <!-- Member cards will be dynamically inserted here -->
-      </div>
+      <h2>Welcome to the Buenos Aires Chamber Directory</h2>
+      <button id="toggleView" aria-label="Toggle between list and grid view">TOGGLE VIEW</button>
+      <div id="memberContainer" class="list-view"></div>
     </div>
   </main>
   <footer class="footer">
@@ -73,9 +69,9 @@
       <p>Contact us at: info@buenosaireschamber.com</p>
     </div>
     <div class="social-icons">
-      <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-      <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-      <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com" target="_blank" aria-label="Visit our Facebook page"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.twitter.com" target="_blank" aria-label="Visit our Twitter page"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.instagram.com" target="_blank" aria-label="Visit our Instagram page"><i class="fab fa-instagram"></i></a>
     </div>
     <p>&copy; <span id="currentYear"></span> | Last Updated: <span id="lastModified"></span></p>
   </footer>
