@@ -107,27 +107,34 @@ a:hover {
   justify-content: center;
 }
 
-#memberContainer.list-view {
+.grid-view #memberContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.list-view #memberContainer {
   display: block;
 }
 
-#memberContainer.grid-view {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 20px;
+.grid-view .member-card {
+  width: 250px; 
+}
+
+.list-view .member-card {
+  width: 100%; 
 }
 
 .member-card {
   background-color: var(--background-color);
   padding: 20px;
   text-align: center;
-  width: 250px;
   box-sizing: border-box;
   transition: var(--transition);
 }
 
 .member-card img {
-  width: 100%;
+  width: 20%;
   height: auto;
 }
 
@@ -138,6 +145,17 @@ a:hover {
 
 .member-card p {
   margin: 5px 0;
+}
+
+.member-card a{
+  text-decoration: none;
+}
+
+.member-card:hover{
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+  background-color: var(--secondary-color);
+  color: var(--background-color);
 }
 
 /* Toggle View Button */
