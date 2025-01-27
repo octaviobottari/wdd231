@@ -35,6 +35,18 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
     });
+
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const hamburger = document.querySelector(".hamburger");
+      const mobileNav = document.querySelector(".mobile-nav");
+    
+      hamburger.addEventListener("click", () => {
+        mobileNav.classList.toggle("open");
+        mobileNav.classList.toggle("hidden");
+      });
+    });
+    
   
     // Set footer info
     document.getElementById("currentYear").textContent = new Date().getFullYear();

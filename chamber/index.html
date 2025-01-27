@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Buenos Aires Chamber of Commerce Home Page">
+  <meta name="author" content="Octavio Bottari">
+  <meta property="og:title" content="Buenos Aires Chamber Home">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/logo.png">
+  <meta property="og:url" content="https://example.com/index.html">
+  <title>Buenos Aires Chamber Home</title>
+  <link rel="stylesheet" href="styles/style.css">
+  <script src="scripts/script.js" defer></script>
+  <link rel="icon" href="images/favicon.ico">
+</head>
+<body>
+  <header class="header">
+    <img src="images/logo.png" alt="Buenos Aires Chamber Logo">
+    <nav class="desktop-nav">
+      <a href="index.html" aria-label="Navigate to Home">Home</a>
+      <a href="directory.html" aria-label="Navigate to Directory">Directory</a>
+      <a href="about.html" aria-label="Navigate to About Us">About</a>
+      <a href="contact.html" aria-label="Navigate to Contact Us">Contact</a>
+    </nav>
+    <button class="hamburger" aria-label="Open navigation menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav class="mobile-nav hidden">
+      <a href="index.html">Home</a>
+      <a href="directory.html">Directory</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>  
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Welcome to the Buenos Aires Chamber</h1>
+        <p>Join us today and be part of a thriving business community.</p>
+        <a href="join.html" class="hero-button" aria-label="Join the Buenos Aires Chamber">JOIN NOW</a>
+      </div>
+    </section>
+
+    <!-- Current Events Section -->
+    <div class="content">
+    <section class="current-events">
+      <h2>Upcoming Events</h2>
+      <p>Stay tuned for exciting events hosted by the Buenos Aires Chamber of Commerce.</p>
+    </section>
+
+    <!-- Weather Section -->
+    <section class="weather">
+      <h2>Current Weather</h2>
+      <div id="weather-container">
+        <p id="weather-description">Loading...</p>
+        <p id="temperature">Loading...</p>
+        <h3>3-Day Forecast</h3>
+        <div id="forecast"></div>
+      </div>
+    </section>
+
+    <!-- Spotlight Members Section -->
+    <section class="spotlights">
+      <h2>Member Spotlights</h2>
+      <div id="spotlight-container" class="list-view"></div>
+    </section>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="contact-info">
+      <p>Contact us at: info@buenosaireschamber.com</p>
+    </div>
+    <div class="social-icons">
+      <a href="https://www.facebook.com" target="_blank" aria-label="Visit our Facebook page"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.twitter.com" target="_blank" aria-label="Visit our Twitter page"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.instagram.com" target="_blank" aria-label="Visit our Instagram page"><i class="fab fa-instagram"></i></a>
+    </div>
+    <p>&copy; <span id="currentYear"></span> | Last Updated: <span id="lastModified"></span></p>
+  </footer>
+
+  <script>
+    const apiKey = '7628821d2985129f91ea402d5e5ef0d2';
+    const city = 'Buenos Aires';  
+    const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+    const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${apiKey}`;
+
+    fetch(weatherUrl)
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('weather-description').textContent = `Weather: ${data.weather[0].description.replace(/\b\w/g, char => char.toUpperCase())}`;
+        document.getElementById('temperature').textContent = `Temperature: ${Math.round(data.main.temp)}°C`;
+      });
+
+    fetch(forecastUrl)
+      .then(response => response.json())
+      .then(data => {
+        let forecastHTML = '';
+        for (let i = 0; i < 3; i++) {
+          forecastHTML += `
+            <div>
+              <p>${new Date(data.list[i].dt * 1000).toLocaleDateString()}</p>
+              <p>Temp: ${Math.round(data.list[i].main.temp)}°C</p>
+            </div>
+          `;
+        }
+        document.getElementById('forecast').innerHTML = forecastHTML;
+      });
+
+    // Fetch spotlight members (gold/silver members) from JSON data
+    fetch('data/members.json')
+      .then(response => response.json())
+      .then(members => {
+        const spotlightContainer = document.getElementById('spotlight-container');
+        const spotlightMembers = members.filter(member => member.membershipLevel === 2 || member.membershipLevel === 3);
+        spotlightMembers.sort(() => Math.random() - 0.5); // Randomize the spotlights
+
+        spotlightMembers.slice(0, 3).forEach(member => {
+          const memberCard = document.createElement('div');
+          memberCard.classList.add('member-card');
+          memberCard.innerHTML = `
+            <img src="images/${member.image}" alt="${member.name} Logo">
+            <h3>${member.name}</h3>
+            <p>Phone: ${member.phone}</p>
+            <p>Address: ${member.address}</p>
+            <p><a href="${member.website}" target="_blank">Visit Website</a></p>
+            <p>Membership Level: ${member.membershipLevel === 2 ? 'Silver' : 'Gold'}</p>
+          `;
+          spotlightContainer.appendChild(memberCard);
+        });
+      });
+
+    // Set dynamic footer date
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+    document.getElementById('lastModified').textContent = document.lastModified;
+  </script>
+</body>
+</html>

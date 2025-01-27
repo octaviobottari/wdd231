@@ -18,13 +18,25 @@
 <body>
   <header class="header">
     <img src="images/logo.png" alt="Buenos Aires Chamber Logo">
-    <nav>
-      <a href="#" aria-label="Navigate to Home">Home</a>
-      <a href="#" aria-label="Navigate to Directory">Directory</a>
-      <a href="#" aria-label="Navigate to About Us">About</a>
-      <a href="#" aria-label="Navigate to Contact Us">Contact</a>
+    <nav class="desktop-nav">
+      <a href="index.html" aria-label="Navigate to Home">Home</a>
+      <a href="directory.html" aria-label="Navigate to Directory">Directory</a>
+      <a href="about.html" aria-label="Navigate to About Us">About</a>
+      <a href="contact.html" aria-label="Navigate to Contact Us">Contact</a>
+    </nav>
+    <button class="hamburger" aria-label="Open navigation menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav class="mobile-nav hidden">
+      <a href="index.html">Home</a>
+      <a href="directory.html">Directory</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
+  
   <main>
     <section class="hero">
       <div class="hero-content">
@@ -35,33 +47,28 @@
     <div class="content">
       <h2>Welcome to the Buenos Aires Chamber Directory</h2>
       <button id="toggleView" aria-label="Toggle between list and grid view">TOGGLE VIEW</button>
-      <div id="memberContainer" class="list-view"></div>
-    </div>
-  </main>
-  <footer class="footer">
-    <div class="business-cards">
-      <div class="business-card">
-        <img src="images/louis_caputo_profile.jpg" alt="Louis Caputo">
-        <div class="card-info">
-          <p class="name">Louis Caputo</p>
-          <p class="position">CEO</p>
-          <p class="company">Buenos Aires Chamber of Commerce</p>
+      <div id="memberContainer" class="list-view">
+        <!-- Adjusted layout for list view -->
+        <div class="member-item">
+          <img src="images/louis_caputo_profile.jpg" alt="Louis Caputo">
+          <div class="member-info">
+            <h3>Louis Caputo</h3>
+            <p>CEO, Buenos Aires Chamber of Commerce</p>
+          </div>
         </div>
-      </div>
-      <div class="business-card">
-        <img src="images/javier_milei_profile.jpg" alt="Javier Milei">
-        <div class="card-info">
-          <p class="name">Javier Milei</p>
-          <p class="position">Director</p>
-          <p class="company">Buenos Aires Chamber of Commerce</p>
+        <div class="member-item">
+          <img src="images/javier_milei_profile.jpg" alt="Javier Milei">
+          <div class="member-info">
+            <h3>Javier Milei</h3>
+            <p>Director, Buenos Aires Chamber of Commerce</p>
+          </div>
         </div>
-      </div>
-      <div class="business-card">
-        <img src="images/victoria_villarruel_profile.jpg" alt="Victoria Villaruel">
-        <div class="card-info">
-          <p class="name">Victoria Villaruel</p>
-          <p class="position">Member</p>
-          <p class="company">Buenos Aires Chamber of Commerce</p>
+        <div class="member-item">
+          <img src="images/victoria_villarruel_profile.jpg" alt="Victoria Villaruel">
+          <div class="member-info">
+            <h3>Victoria Villaruel</h3>
+            <p>Member, Buenos Aires Chamber of Commerce</p>
+          </div>
         </div>
       </div>
     </div>
