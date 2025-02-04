@@ -46,41 +46,48 @@
     </section>
     <div class="content">
       <h2>Welcome to the Buenos Aires Chamber Directory</h2>
-      <button id="toggleView" aria-label="Toggle between list and grid view">TOGGLE VIEW</button>
-      <div id="memberContainer" class="list-view">
-        <!-- Adjusted layout for list view -->
+      <div class="list-view">
         <div class="member-item">
-          <img src="images/louis_caputo_profile.jpg" alt="Louis Caputo">
-          <div class="member-info">
-            <h3>Louis Caputo</h3>
-            <p>CEO, Buenos Aires Chamber of Commerce</p>
-          </div>
-        </div>
-        <div class="member-item">
-          <img src="images/javier_milei_profile.jpg" alt="Javier Milei">
-          <div class="member-info">
-            <h3>Javier Milei</h3>
-            <p>Director, Buenos Aires Chamber of Commerce</p>
-          </div>
-        </div>
-        <div class="member-item">
-          <img src="images/victoria_villarruel_profile.jpg" alt="Victoria Villaruel">
-          <div class="member-info">
-            <h3>Victoria Villaruel</h3>
-            <p>Member, Buenos Aires Chamber of Commerce</p>
-          </div>
-        </div>
+      <img src="images/louis_caputo_profile.jpg" alt="Louis Caputo">
+      <div class="member-info">
+        <h3>Louis Caputo</h3>
+        <p>CEO, Buenos Aires Chamber of Commerce</p>
       </div>
     </div>
-    <div class="contact-info">
-      <p>Contact us at: info@buenosaireschamber.com</p>
+    <div class="member-item">
+      <img src="images/javier_milei_profile.jpg" alt="Javier Milei">
+      <div class="member-info">
+        <h3>Javier Milei</h3>
+        <p>Director, Buenos Aires Chamber of Commerce</p>
+      </div>
     </div>
-    <div class="social-icons">
-      <a href="https://www.facebook.com" target="_blank" aria-label="Visit our Facebook page"><i class="fab fa-facebook"></i></a>
-      <a href="https://www.twitter.com" target="_blank" aria-label="Visit our Twitter page"><i class="fab fa-twitter"></i></a>
-      <a href="https://www.instagram.com" target="_blank" aria-label="Visit our Instagram page"><i class="fab fa-instagram"></i></a>
+    <div class="member-item">
+      <img src="images/victoria_villarruel_profile.jpg" alt="Victoria Villaruel">
+      <div class="member-info">
+        <h3>Victoria Villaruel</h3>
+        <p>Member, Buenos Aires Chamber of Commerce</p>
+      </div>
     </div>
-    <p>&copy; <span id="currentYear"></span> | Last Updated: <span id="lastModified"></span></p>
-  </footer>
+  </div> 
+      <button id="toggleView" aria-label="Toggle between list and grid view">TOGGLE VIEW</button>
+    
+      <div id="memberContainer" class="list-view">
+      </div> 
+      
+      <!-- Dynamic members get inserted here -->
+      </div>
+    </div>
+    
+    <footer class="footer">
+      <div class="contact-info">
+        <p>Contact us at: info@buenosaireschamber.com</p>
+      </div>
+      <div class="social-icons">
+        <a href="https://www.facebook.com" target="_blank" aria-label="Visit our Facebook page"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.twitter.com" target="_blank" aria-label="Visit our Twitter page"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com" target="_blank" aria-label="Visit our Instagram page"><i class="fab fa-instagram"></i></a>
+      </div>
+      <p>&copy; <span id="currentYear"></span> | Last Updated: <span id="lastModified"></span></p>
+    </footer>
 </body>
 </html>

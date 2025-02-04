@@ -1,7 +1,7 @@
 /* Root Variables */
 :root {
-  --primary-color: #149997;
-  --secondary-color: #0a4746;
+  --primary-color: #007bff;
+  --secondary-color: #3692f5;
   --text-color: #000;
   --background-color: #f0f0f0;
   --font-family: 'Arial', sans-serif;
@@ -14,7 +14,12 @@ body, html {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  min-height: 100vh; 
+  display: grid;
+  grid-template-rows: auto 1fr auto; 
+
 }
+
 
 a {
   text-decoration: none;
@@ -130,6 +135,7 @@ a:hover {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
 }
+
 .member-item {
   display: flex;
   gap: 10px;
@@ -138,11 +144,13 @@ a:hover {
   padding: 10px;
   border-radius: 8px;
 }
+
 .member-item img {
   width: 50px;
   height: 50px;
   border-radius: 50%;
 }
+
 .member-info h3 {
   margin: 0;
   font-size: 1.2rem;
@@ -206,6 +214,7 @@ a:hover {
   text-align: center;
   color: var(--text-color);
   font-weight: bold;
+  flex-shrink: 0; 
 }
 
 .footer .business-cards {
@@ -252,7 +261,91 @@ a:hover {
   color: var(--secondary-color);
 }
 
+/* Weather Section */
+.weather {
+  background-color: #f9f9f9;
+  padding: 2rem;
+  border-radius: 10px;
+  margin: 2rem 0;
+  text-align: center;
+}
 
+#weather-container {
+  margin-top: 1rem;
+}
+
+#weather-description,
+#temperature {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+#forecast {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1rem;
+}
+
+#forecast div {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 30%;
+}
+
+.current-events {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  margin: 2rem 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.current-events h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.events-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.event-card {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 300px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.event-card h3 {
+  font-size: 1.5rem;
+  color: #007bff;
+  margin-bottom: 0.5rem;
+}
+
+.event-card p {
+  font-size: 1rem;
+  color: #555;
+  margin: 0.5rem 0;
+}
+
+
+/* Mobile Navigation */
 .mobile-nav {
   display: none;
   flex-direction: column;
@@ -285,6 +378,286 @@ a:hover {
   background-color: var(--text-color);
 }
 
+
+.membership-form {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: linear-gradient(145deg, #ffffff, #f9f9f9);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+}
+
+.membership-form h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.membership-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.membership-form form div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.membership-form label {
+  font-size: 1rem;
+  color: #555;
+  font-weight: 500;
+}
+
+.membership-form input,
+.membership-form select,
+.membership-form textarea {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #333;
+  background-color: #fafafa;
+  transition: all 0.3s ease;
+}
+
+.membership-form input:focus,
+.membership-form select:focus,
+.membership-form textarea:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+  outline: none;
+  background-color: #fff;
+}
+
+.membership-form input[type="submit"] {
+  background: linear-gradient(145deg, #007bff, #0056b3);
+  color: white;
+  border: none;
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.membership-form input[type="submit"]:hover {
+  background: linear-gradient(145deg, #0056b3, #007bff);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+}
+
+.membership-form input[type="submit"]:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* Animation for form inputs */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.membership-form form div {
+  animation: slideIn 0.5s ease-out;
+  animation-fill-mode: both;
+}
+
+.membership-form form div:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.membership-form form div:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.membership-form form div:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.membership-form form div:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.membership-form form div:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.membership-form form div:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+.membership-form form div:nth-child(7) {
+  animation-delay: 0.7s;
+}
+
+.membership-form form div:nth-child(8) {
+  animation-delay: 0.8s;
+}
+
+.membership-form form div:nth-child(9) {
+  animation-delay: 0.9s;
+}
+
+/* Modal Overlay */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  max-width: 500px;
+  width: 90%;
+  position: relative;
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Modal Heading */
+.modal-content h4 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+/* Modal Paragraph */
+.modal-content p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Close Button */
+.modal-content .close-modal {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.modal-content .close-modal:hover {
+  background-color: #0056b3;
+}
+
+/* Animation for Modal */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.membership-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+  gap: 30px;
+  padding: 40px;
+  margin: 20px 0;
+}
+
+/* Card Styling */
+.card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 250px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+/* Card Text */
+.card h3 {
+  font-size: 1.3em;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.card p {
+  font-size: 1em;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+/* Button Styling */
+.card button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.card button:hover {
+  background-color: #0056b3;
+}
+
+/* Hover Effects */
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Specific Card Colors */
+#np-card {
+  border-left: 5px solid #5bc0de; /* Light blue for NP */
+}
+
+#bronze-card {
+  border-left: 5px solid #cd7f32; /* Bronze */
+}
+
+#silver-card {
+  border-left: 5px solid #c0c0c0; /* Silver */
+}
+
+#gold-card {
+  border-left: 5px solid #f39c12; /* Gold */
+}
+
+
+
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
@@ -314,43 +687,67 @@ a:hover {
   .mobile-nav.open {
     display: flex; 
   }
+
   .content .sections {
-      flex-direction: column;
+    flex-direction: column;
   }
 
   .footer .business-cards {
-      flex-direction: column;
-      gap: 20px;
+    flex-direction: column;
+    gap: 20px;
   }
 
   .footer .contact-info {
-      text-align: center;
+    text-align: center;
   }
 
   .desktop-nav {
     display: none;
   }
+  
   .hamburger {
     display: flex;
   }
+
   .mobile-nav.hidden {
     display: flex;
   }
+
+  .membership-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .card {
+    width: 100%; 
+    margin-bottom: 20px; 
+  }
+
+  .events-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .event-card {
+    width: 90%;
+  }
+
 }
 
 @media (max-width: 480px) {
   .hero-content h1 {
-      font-size: 28px;
+    font-size: 28px;
   }
 
   .hero-content p {
-      font-size: 1rem;
+    font-size: 1rem;
   }
 
   .hero-button {
-      bottom: 10px;
-      right: 10px;
-      padding: 10px 15px;
-      font-size: 0.9rem;
+    bottom: 10px;
+    right: 10px;
+    padding: 10px 15px;
+    font-size: 0.9rem;
   }
 }

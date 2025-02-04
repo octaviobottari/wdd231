@@ -47,15 +47,30 @@
     </section>
 
     <!-- Current Events Section -->
-    <div class="content">
     <section class="current-events">
       <h2>Upcoming Events</h2>
-      <p>Stay tuned for exciting events hosted by the Buenos Aires Chamber of Commerce.</p>
+      <div class="events-container">
+        <div class="event-card">
+          <h3>Networking Night</h3>
+          <p>Date: October 25, 2023</p>
+          <p>Location: Chamber Office</p>
+        </div>
+        <div class="event-card">
+          <h3>Business Workshop</h3>
+          <p>Date: November 10, 2023</p>
+          <p>Location: Online</p>
+        </div>
+        <div class="event-card">
+          <h3>Annual Gala</h3>
+          <p>Date: December 15, 2023</p>
+          <p>Location: Grand Hotel</p>
+        </div>
+      </div>
     </section>
 
     <!-- Weather Section -->
     <section class="weather">
-      <h2>Current Weather</h2>
+      <h2>Current Weather in Buenos Aires</h2>
       <div id="weather-container">
         <p id="weather-description">Loading...</p>
         <p id="temperature">Loading...</p>
@@ -65,11 +80,12 @@
     </section>
 
     <!-- Spotlight Members Section -->
+     <div  class="content">
     <section class="spotlights">
       <h2>Member Spotlights</h2>
       <div id="spotlight-container" class="list-view"></div>
     </section>
-</div>
+  </div>
   </main>
 
   <footer class="footer">
@@ -83,61 +99,5 @@
     </div>
     <p>&copy; <span id="currentYear"></span> | Last Updated: <span id="lastModified"></span></p>
   </footer>
-
-  <script>
-    const apiKey = '7628821d2985129f91ea402d5e5ef0d2';
-    const city = 'Buenos Aires';  
-    const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
-    const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${apiKey}`;
-
-    fetch(weatherUrl)
-      .then(response => response.json())
-      .then(data => {
-        document.getElementById('weather-description').textContent = `Weather: ${data.weather[0].description.replace(/\b\w/g, char => char.toUpperCase())}`;
-        document.getElementById('temperature').textContent = `Temperature: ${Math.round(data.main.temp)}°C`;
-      });
-
-    fetch(forecastUrl)
-      .then(response => response.json())
-      .then(data => {
-        let forecastHTML = '';
-        for (let i = 0; i < 3; i++) {
-          forecastHTML += `
-            <div>
-              <p>${new Date(data.list[i].dt * 1000).toLocaleDateString()}</p>
-              <p>Temp: ${Math.round(data.list[i].main.temp)}°C</p>
-            </div>
-          `;
-        }
-        document.getElementById('forecast').innerHTML = forecastHTML;
-      });
-
-    // Fetch spotlight members (gold/silver members) from JSON data
-    fetch('data/members.json')
-      .then(response => response.json())
-      .then(members => {
-        const spotlightContainer = document.getElementById('spotlight-container');
-        const spotlightMembers = members.filter(member => member.membershipLevel === 2 || member.membershipLevel === 3);
-        spotlightMembers.sort(() => Math.random() - 0.5); // Randomize the spotlights
-
-        spotlightMembers.slice(0, 3).forEach(member => {
-          const memberCard = document.createElement('div');
-          memberCard.classList.add('member-card');
-          memberCard.innerHTML = `
-            <img src="images/${member.image}" alt="${member.name} Logo">
-            <h3>${member.name}</h3>
-            <p>Phone: ${member.phone}</p>
-            <p>Address: ${member.address}</p>
-            <p><a href="${member.website}" target="_blank">Visit Website</a></p>
-            <p>Membership Level: ${member.membershipLevel === 2 ? 'Silver' : 'Gold'}</p>
-          `;
-          spotlightContainer.appendChild(memberCard);
-        });
-      });
-
-    // Set dynamic footer date
-    document.getElementById('currentYear').textContent = new Date().getFullYear();
-    document.getElementById('lastModified').textContent = document.lastModified;
-  </script>
 </body>
 </html>
