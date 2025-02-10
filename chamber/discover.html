@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover Buenos Aires - Chamber of Commerce">
+  <meta name="author" content="Octavio Bottari">
+  <meta property="og:title" content="Discover Buenos Aires">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/logo.png">
+  <meta property="og:url" content="https://example.com/discover.html">
+  <title>Discover Buenos Aires</title>
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/medium.css">
+  <link rel="stylesheet" href="styles/large.css">
+  <script src="scripts/script.js" defer></script>
+  <script src="scripts/discover.js" defer></script>
+  <link rel="icon" href="images/favicon.ico">
+</head>
+<body>
+    <header class="header">
+        <img src="images/logo.png" alt="Buenos Aires Chamber Logo">
+        <nav class="desktop-nav">
+          <a href="index.html" aria-label="Navigate to Home">Home</a>
+          <a href="directory.html" aria-label="Navigate to Directory">Directory</a>
+          <a href="discover.html" aria-label="Navigate to About Us">Discover</a>
+          <a href="join.html" aria-label="Navigate to Contact Us">Join Us</a>
+        </nav>
+        <button class="hamburger" aria-label="Open navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="mobile-nav hidden">
+          <a href="index.html">Home</a>
+          <a href="directory.html">Directory</a>
+          <a href="discover.html">Discover</a>
+          <a href="join.html">Join Us</a>
+        </nav>
+      </header>  
+
+  <main>
+    <div class="content">
+    <aside class="sidebar">
+      <div id="last-visit-message"></div>
+    </aside>
+
+    <section class="discover">
+      <h2>Discover Buenos Aires</h2>
+      <div class="cards-container">
+      </div>
+    </section>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="contact-info">
+      <p>Contact us at: info@buenosaireschamber.com</p>
+    </div>
+    <div class="social-icons">
+      <a href="https://www.facebook.com" target="_blank" aria-label="Visit our Facebook page"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.twitter.com" target="_blank" aria-label="Visit our Twitter page"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.instagram.com" target="_blank" aria-label="Visit our Instagram page"><i class="fab fa-instagram"></i></a>
+    </div>
+    <p>&copy; <span id="currentYear"></span> | Last Updated: <span id="lastModified"></span></p>
+  </footer>
+</body>
+</html>

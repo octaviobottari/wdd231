@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", () => {
   // ----------------------------
   // 1. Hamburger Menu Functionality
@@ -11,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     mobileNav.classList.toggle("hidden");
   });
 
- // ----------------------------
+  // ----------------------------
   // 2. Weather and Forecast API
   // ----------------------------
   const apiKey = "7628821d2985129f91ea402d5e5ef0d2";
@@ -159,5 +158,101 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("display-timestamp").textContent =
       urlParams.get("timestamp");
   }
-});
 
+  // ----------------------------
+  // 8. Discover Page: Last Visit Message and Dynamic Cards
+  // ----------------------------
+  const lastVisitMessage = document.getElementById("last-visit-message");
+  if (lastVisitMessage) {
+    const lastVisit = localStorage.getItem("lastVisit");
+    const currentDate = Date.now();
+
+    if (!lastVisit) {
+      lastVisitMessage.textContent = "Welcome! Let us know if you have any questions.";
+    } else {
+      const daysSinceLastVisit = Math.floor((currentDate - lastVisit) / (1000 * 60 * 60 * 24));
+      if (daysSinceLastVisit < 1) {
+        lastVisitMessage.textContent = "Back so soon! Awesome!";
+      } else {
+        lastVisitMessage.textContent = `You last visited ${daysSinceLastVisit} ${daysSinceLastVisit === 1 ? 'day' : 'days'} ago.`;
+      }
+    }
+
+    localStorage.setItem("lastVisit", currentDate);
+  }
+
+  const cardsContainer = document.querySelector(".cards-container");
+  if (cardsContainer) {
+
+    const items = [
+      {
+        title: "La Boca",
+        address: "Caminito St, Buenos Aires",
+        description: "Famous for its colorful houses and tango culture.",
+        image: "images/laboca.jpeg"
+      },
+        {
+          "title": "Obelisco",
+          "address": "Av. 9 de Julio, Buenos Aires",
+          "description": "Iconic monument and a symbol of Buenos Aires.",
+          "image": "images/obelisco.jpg"
+        },
+        {
+          "title": "Recoleta Cemetery",
+          "address": "Junín 1760, Buenos Aires",
+          "description": "Resting place of famous figures, known for its grand mausoleums.",
+          "image": "images/recoleta-cemetery.jpg"
+        },
+        {
+          "title": "San Telmo",
+          "address": "San Telmo, Buenos Aires",
+          "description": "Historic neighborhood famous for its cobblestone streets and antique markets.",
+          "image": "images/san-telmo.jpg"
+        },
+        {
+          "title": "Teatro Colón",
+          "address": "Cerrito 628, Buenos Aires",
+          "description": "One of the world's most renowned opera houses.",
+          "image": "images/teatro-colon.jpeg"
+        },
+        {
+          "title": "Plaza de Mayo",
+          "address": "Av. Rivadavia & Bolívar, Buenos Aires",
+          "description": "Historic square surrounded by important government buildings.",
+          "image": "images/plaza-de-mayo.jpg"
+        },
+        {
+          "title": "Puerto Madero",
+          "address": "Puerto Madero, Buenos Aires",
+          "description": "Modern waterfront district with restaurants and skyscrapers.",
+          "image": "images/puerto-madero.jpg"
+        },
+        {
+          "title": "Palermo Soho",
+          "address": "Palermo, Buenos Aires",
+          "description": "Trendy area known for its bars, boutiques, and vibrant nightlife.",
+          "image": "images/palermo-soho.jpg"
+        }
+    ];
+
+    function createCard(item) {
+      const card = document.createElement("div");
+      card.classList.add("card");
+      card.innerHTML = `
+        <h2>${item.title}</h2>
+        <figure>
+          <img src="${item.image}" alt="${item.title}" loading="lazy">
+        </figure>
+        <address>${item.address}</address>
+        <p>${item.description}</p>
+        <button>Learn More</button>
+      `;
+      return card;
+    }
+
+    items.forEach(item => {
+      const card = createCard(item);
+      cardsContainer.appendChild(card);
+    });
+  }
+});
