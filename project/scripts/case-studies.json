@@ -1,0 +1,92 @@
+[
+    {
+        "title": "BYU - PATHWAY WORLDWIDE",
+        "description": "Full Stack Web Development for the Student Portal",
+        "image": "images/case-study-1.png",
+        "link": "#"
+    },
+    {
+        "title": "Ross Dress for less",
+        "description": "WordPress Theme Development, Enhanced Online Presence for Global Brand",
+        "image": "images/case-study-2.svg",
+        "link": "#"
+    },
+    {
+        "title": "Los Albertos",
+        "description": "Web Design with an ordering online system",
+        "image": "images/case-study-3.png",
+        "link": "#"
+    },
+    {
+        "title": "Museum of idaho",
+        "description": "Web Design ",
+        "image": "images/case-study-4.png",
+        "link": "#"
+    },
+    {
+        "title": "City of Tetonia",
+        "description": "Marketplace for Local Artisans and Crafters",
+        "image": "images/case-study-5.png",
+        "link": "#"
+    },
+    {
+        "title": "Redfish Lake Lodge",
+        "description": "Full Stack Web Development for",
+        "image": "images/case-study-6.png",
+        "link": "#"
+    },
+    {
+        "title": "Green Valley Farms",
+        "description": "E-commerce platform for organic produce, enabling farmers to sell directly to consumers.",
+        "image": "images/case-study-7.png",
+        "link": "#"
+    },
+    {
+        "title": "Tech Innovators Inc.",
+        "description": "Custom CRM development to streamline client management and improve internal workflows.",
+        "image": "images/case-study-8.jpg",
+        "link": "#"
+    },
+    {
+        "title": "Sunrise Bakery",
+        "description": "Web Design with an online ordering system, allowing customers to pre-order baked goods for pickup.",
+        "image": "images/case-study-9.jpg",
+        "link": "#"
+    },
+    {
+        "title": "Adventure Travel Co.",
+        "description": "Travel booking platform with integrated payment processing and itinerary management.",
+        "image": "images/case-study-10.jpg",
+        "link": "#"
+    },
+    {
+        "title": "Urban Fitness Hub",
+        "description": "Membership portal and class scheduling system for a modern fitness center.",
+        "image": "images/case-study-11.jpg",
+        "link": "#"
+    },
+    {
+        "title": "EcoTech Solutions",
+        "description": "Website redesign to highlight sustainable technology products and services.",
+        "image": "images/case-study-12.jpg",
+        "link": "#"
+    },
+    {
+        "title": "Creative Minds Agency",
+        "description": "Portfolio website for a creative agency, showcasing their work and attracting new clients.",
+        "image": "images/case-study-13.png",
+        "link": "#"
+    },
+    {
+        "title": "Pet Paradise",
+        "description": "E-commerce platform for pet supplies, offering a wide range of products for pet owners.",
+        "image": "images/case-study-14.jpg",
+        "link": "#"
+    },
+    {
+        "title": "Global Health Network",
+        "description": "Web application for managing global health initiatives and connecting medical professionals.",
+        "image": "images/case-study-15.png",
+        "link": "#"
+    }
+]
